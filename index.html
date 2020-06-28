@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JSON</title>
 </head>
 
 <body>
-    <div id="data">
-        <div id="name"></div>
-        <div id="age"></div>
-    </div>
+    <div id="show"></div>
+    <script src="jquery-3.2.1.min.js"></script>
     <script>
-        let myJson = '{"username","Osama","age":36}';
-        let myJs = JSON.parse(myJson);
+        $(function() {
+            $.getJSON('usres.json', function(data) {
+                console.log(data);
 
-        document.getElementById('name').innerHTML = "My Nmae Is" + myJs.username;
-        document.getElementById('age').innerHTML = "My Age Is" + myJs.age;
+                var content = '';
+                for (var x in data) {
+                    content += '<div>' + data[x].username + "</div>";
+                }
+                console.log(content);
+                $('#show').html(content)
+
+            })
+        })
     </script>
 </body>
 
