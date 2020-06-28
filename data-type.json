@@ -1,0 +1,15 @@
+{
+    "username": "Mohammed",
+    "country": "Gaza",
+    "skills": ["HTML", "CSS", "JS"],
+    "adresses": {
+        "Egypt": "Hadayaek",
+        "kSA": "Malaz",
+        "USA": "California",
+        "Garemany": ["one", "two", "three"]
+    },
+    "Age": 36,
+    "working": false,
+    "identity": null
+
+}
