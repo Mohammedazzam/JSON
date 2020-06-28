@@ -11,18 +11,76 @@
     <div id="show"></div>
     <script src="jquery-3.2.1.min.js"></script>
     <script>
-        $(function() {
-            $.getJSON('usres.json', function(data) {
-                console.log(data);
+        // $(function() {
+        //     $.getJSON('usres.json', function(data) {
+        //         console.log(data);
 
-                var content = '';
-                for (var x in data) {
-                    content += '<div>' + data[x].username + "</div>";
-                }
-                console.log(content);
-                $('#show').html(content)
+        //         var content = '';
+        //         for (var x in data) {
+        //             content += '<div>' + data[x].username + "</div>";
+        //         }
+        //         console.log(content);
+        //         $('#show').html(content)
+        //     })
+        // })
 
-            })
+
+
+        // $.ajax({
+        //     url: 'usres.json',
+        //     dataType: 'json',
+        //     cache: false,
+        //     success: function(data, status) {
+        //         var content = '';
+        //         for (var x in data) {
+        //             content += '<div>' + data[x].username + "</div>";
+        //         }
+        //         console.log(content);
+        //         $('#show').html(content);
+        //     },
+        //     error: function(xhr, textStatus, err) {
+        //         console.log(xhr);
+        //         console.log(textStatus);
+        //         console.log(err);
+        //     }
+
+        // })
+
+
+
+        // $.ajax({
+        //     url: 'usres.json',
+        //     dataType: 'json',
+        //     cache: false,
+        //     success: function(data, status) {
+        //         $.each(data, function(index) {
+        //             $('#show').append('<div>' + data[index].username + '</div>');
+        //         })
+        //     },
+        //     error: function(xhr, textStatus, err) {
+        //         console.log(xhr);
+        //         console.log(textStatus);
+        //         console.log(err);
+        //     }
+
+        // })
+
+        //حل آخر أسهل
+        $.ajax({
+            url: "https://api.github.com/users/ElzeroWebSchool/repos",
+            dataType: 'json',
+            cache: false,
+            success: function(data, status) {
+                $.each(data, function(index) {
+                    $('#show').append('<div>' + data[index].full_name + '</div>');
+                })
+            },
+            error: function(xhr, textStatus, err) {
+                console.log(xhr);
+                console.log(textStatus);
+                console.log(err);
+            }
+
         })
     </script>
 </body>
