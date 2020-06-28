@@ -8,23 +8,16 @@
 </head>
 
 <body>
+    <div id="data">
+        <div id="name"></div>
+        <div id="age"></div>
+    </div>
     <script>
-        // let myJsonbject = '{"username","Osama","Age":36}';
-        // let myJsObject = JSON.parse(myJsonbject);
-        // console.log(myJsonbject);
-        // console.log(typeof(myJsonbject));
-        // console.log(myJsObject);
-        // console.log(typeof(myJsObject));
+        let myJson = '{"username","Osama","age":36}';
+        let myJs = JSON.parse(myJson);
 
-
-        let myJsObject = '{"username","Osama","Age":36}';
-        let myJsonbject = JSON.stringify(myJsObject);
-
-        console.log(myJsObject);
-        console.log(typeof(myJsObject));
-
-        console.log(myJsonbject);
-        console.log(typeof(myJsonbject));
+        document.getElementById('name').innerHTML = "My Nmae Is" + myJs.username;
+        document.getElementById('age').innerHTML = "My Age Is" + myJs.age;
     </script>
 </body>
 
