@@ -1,7 +1,12 @@
 {
     "username": "Mohammed",
     "country": "Gaza",
-    "skills": ["HTML", "CSS", "JS"],
+    "skills": [
+        ["HTML", "Pugjs", "HTML"],
+        ["CSS", "Sass", "Less"],
+        ["js", "Bable"]
+    ],
+    "SkillesProgres": [{ "Html": "60%", "Pugjs": "50%" }, { "css": "60%", "scss": "80" }],
     "adresses": {
         "Egypt": "Hadayaek",
         "kSA": "Malaz",
